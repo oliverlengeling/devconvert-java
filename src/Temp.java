@@ -36,9 +36,9 @@ public class Temp implements ActionListener {
         output.setFocusable(false);
 
 
-        cel.setBounds(60,63,70,20);
+        cel.setBounds(60,65,70,20);
         cel.addActionListener(this);
-        fer.setBounds(140,63,100,20);
+        fer.setBounds(140,65,100,20);
         fer.addActionListener(this);
 
         group.add(cel);

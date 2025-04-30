@@ -8,7 +8,7 @@ public class Menu implements ActionListener {
     public static JFrame frame;
     public static JPanel buttonPanel;
     public static JPanel titlePanel;
-    public static JButton calcButton, tempButton;
+    public static JButton calcButton, tempButton, speedButton;
     public static Font font;
 
     Menu() {
@@ -35,17 +35,24 @@ public class Menu implements ActionListener {
         calcButton = new JButton("Calculator");
         calcButton.setFont(font);
         calcButton.setFocusable(false);
-        calcButton.setBounds(50,50,200,50);
+        calcButton.setBounds(50,95,200,50);
         calcButton.addActionListener(this);
 
         tempButton = new JButton("Temp");
         tempButton.setFont(font);
         tempButton.setFocusable(false);
-        tempButton.setBounds(100,50,100,50);
+        tempButton.setBounds(50,155,200,50);
         tempButton.addActionListener(this);
 
-        buttonPanel.add(calcButton);
-        buttonPanel.add(tempButton);
+        speedButton = new JButton("Speed");
+        speedButton.setFocusable(false);
+        speedButton.setFont(font);
+        speedButton.addActionListener(this);
+        speedButton.setBounds(50,215,200,50);
+
+        frame.add(calcButton);
+        frame.add(tempButton);
+        frame.add(speedButton);
 
         frame.add(authorLabel);
         frame.add(versionLabel);
@@ -68,6 +75,9 @@ public class Menu implements ActionListener {
         }
         if(e.getSource()==tempButton) {
             new Temp();
+        }
+        if(e.getSource()==speedButton) {
+            new Speed();
         }
     }
 }
