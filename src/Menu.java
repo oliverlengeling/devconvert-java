@@ -19,7 +19,7 @@ public class Menu implements ActionListener {
         authorLabel.setFont(new Font("Ink Free", Font.BOLD, 12));
         authorLabel.setBounds(10,440,200,30);
 
-        JLabel versionLabel = new JLabel("v0.2.1");
+        JLabel versionLabel = new JLabel("v0.2.2");
         versionLabel.setBounds(250,440,50,30);
         versionLabel.setFont(new Font("Ink Free", Font.BOLD, 12));
 
