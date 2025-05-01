@@ -17,7 +17,7 @@ public class Temp implements ActionListener {
     JRadioButton cel = new JRadioButton("Celsius");
     JRadioButton fer = new JRadioButton("Fahrenheit");
     ButtonGroup group = new ButtonGroup();
-
+    DecimalFormat numberFormat = new DecimalFormat("#.00");
     public static void main (String[] args) {
         new Temp();
     }
@@ -32,7 +32,7 @@ public class Temp implements ActionListener {
 
         input.setBounds(100,25,100,30);
 
-        output.setBounds(75,100,150,30);
+        output.setBounds(100,100,100,30);
         output.setFocusable(false);
 
 
@@ -63,14 +63,14 @@ public class Temp implements ActionListener {
 
         current = Double.parseDouble(input.getText());
         result = (current - 32) * 5/9;
-        output.setText(String.valueOf(result).concat("°C"));
+        output.setText(String.valueOf(numberFormat.format(result).concat("°C")));
         System.out.println(result);
     }
 
     public void fer() {
         current = Double.parseDouble(input.getText());
         result = (current * 9/5) + 32;
-        output.setText(String.valueOf(result).concat("°F"));
+        output.setText(String.valueOf(numberFormat.format(result).concat("°F")));
         System.out.println(result);
     }
 
@@ -86,7 +86,7 @@ public class Temp implements ActionListener {
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("shit put a number in");
+                System.out.println("null");
             }
             try {
                 Thread.sleep(250);

@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 public class Speed implements ActionListener {
 
@@ -11,6 +12,8 @@ public class Speed implements ActionListener {
     JRadioButton kph;
 
     ButtonGroup buttonGroup = new ButtonGroup();
+
+    DecimalFormat numberFormat = new DecimalFormat("#.00");
 
     JFrame frame;
 
@@ -26,7 +29,7 @@ public class Speed implements ActionListener {
         input.setBounds(100,25,100,30);
 
         output = new JTextField();
-        output.setBounds(75,100,150,30);
+        output.setBounds(100,100,100,30);
         output.setFocusable(false);
 
         mph = new JRadioButton("MPH");
@@ -59,14 +62,14 @@ public class Speed implements ActionListener {
     public void mph() {
         current = Double.parseDouble(input.getText());
         result = current * 0.621371;
-        output.setText(String.valueOf(result));
+        output.setText(String.valueOf(numberFormat.format(result).concat(" MPH")));
         System.out.println(result);
     }
 
     public void kph() {
         current = Double.parseDouble(input.getText());
         result = current * 1.60934;
-        output.setText(String.valueOf(result));
+        output.setText(String.valueOf(numberFormat.format(result).concat(" KPH")));
         System.out.println(result);
     }
 
@@ -82,7 +85,7 @@ public class Speed implements ActionListener {
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("The fuck?");
+                System.out.println("null");
             }
             try {
                 Thread.sleep(250);

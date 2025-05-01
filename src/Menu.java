@@ -7,8 +7,7 @@ public class Menu implements ActionListener {
 
     public static JFrame frame;
     public static JPanel buttonPanel;
-    public static JPanel titlePanel;
-    public static JButton calcButton, tempButton, speedButton;
+    public static JButton calcButton, tempButton, speedButton, salesTaxButton;
     public static Font font;
 
     Menu() {
@@ -20,7 +19,7 @@ public class Menu implements ActionListener {
         authorLabel.setFont(new Font("Ink Free", Font.BOLD, 12));
         authorLabel.setBounds(10,440,200,30);
 
-        JLabel versionLabel = new JLabel("v0.1.1");
+        JLabel versionLabel = new JLabel("v0.2.1");
         versionLabel.setBounds(250,440,50,30);
         versionLabel.setFont(new Font("Ink Free", Font.BOLD, 12));
 
@@ -50,6 +49,13 @@ public class Menu implements ActionListener {
         speedButton.addActionListener(this);
         speedButton.setBounds(50,215,200,50);
 
+        salesTaxButton = new JButton("Sales Tax");
+        salesTaxButton.setFocusable(false);
+        salesTaxButton.setFont(font);
+        salesTaxButton.addActionListener(this);
+        salesTaxButton.setBounds(50,275,200,50);
+
+        frame.add(salesTaxButton);
         frame.add(calcButton);
         frame.add(tempButton);
         frame.add(speedButton);
@@ -78,6 +84,9 @@ public class Menu implements ActionListener {
         }
         if(e.getSource()==speedButton) {
             new Speed();
+        }
+        if(e.getSource()==salesTaxButton) {
+            new salesTax();
         }
     }
 }
