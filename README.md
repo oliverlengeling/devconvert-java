@@ -6,6 +6,9 @@ Yeah so I had the same thing pretty much written in Python and it was CLI and i'
 
 ## Features
 Its got a calculator 
+
 Its also got a sales tax calculator
+
 Did I mention tempurature conversion?
+
 Almost forgot the speed conversion
